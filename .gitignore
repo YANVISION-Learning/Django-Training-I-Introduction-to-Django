@@ -12,7 +12,6 @@ __pycache__/
 # Django
 
 /media/
-/main_app/static/
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
