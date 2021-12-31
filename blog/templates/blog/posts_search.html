@@ -8,28 +8,28 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
 
 
-                {% for mypost in yourposts %}
+                {% for post in posts %}
 
                     <!-- Post preview-->
                     <div class="post-preview">
 
-                        {% if mypost.image %}
-                            <img src="{{ mypost.image.url }}" alt="{{ mypost.title }}">
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}">
                         {% endif %}
 
-                        <a href="{% url 'post_detail' id=mypost.id %}">
-                            <h2 class="post-title">{{ mypost.title }}</h2>
-                            <h3 class="post-subtitle">{{ mypost.body }}</h3>
+                        <a href="{% url 'post_detail' id=post.id %}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h3 class="post-subtitle">{{ post.body }}</h3>
                         </a>
 
                         <p class="post-meta">
-                            Category <a href="#!">{{ mypost.category.title }}</a>
+                            Category <a href="#!">{{ post.category.title }}</a>
                         </p>
 
                         <p class="post-meta">
                             Posted by
                             <a href="#!">Admin</a>
-                            on {{ mypost.create_date }}
+                            on {{ post.create_date }}
                         </p>
                     </div>
                     <!-- Divider-->
