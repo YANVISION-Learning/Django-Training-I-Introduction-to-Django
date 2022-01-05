@@ -17,7 +17,7 @@
                             <img src="{{ post.image.url }}" alt="{{ post.title }}">
                         {% endif %}
 
-                        <a href="{% url 'post_detail' id=post.id %}">
+                        <a href="{% url 'post_detail' pk=post.id %}">
                             <h2 class="post-title">{{ post.title }}</h2>
                             <h3 class="post-subtitle">{{ post.body }}</h3>
                         </a>

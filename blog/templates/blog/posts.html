@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block hero_title %}{{ page.title }}{% endblock hero_title %}
+{% block hero_description %}{{ page.description }}{% endblock hero_description %}
 
 {% block content %}
 
@@ -13,13 +15,13 @@
                     <!-- Post preview-->
                     <div class="post-preview">
 
-                        {% if mypost.image %}
-                            <img src="{{ mypost.image.url }}" alt="{{ mypost.title }}">
+                        {% if mypost.image_thumbnail %}
+                            <img class="post-img" src="{{ mypost.image_thumbnail.url }}" alt="{{ mypost.title }}">
                         {% endif %}
 
-                        <a href="{% url 'post_detail' id=mypost.id %}">
+                        <a href="{% url 'post_detail' pk=mypost.id %}">
                             <h2 class="post-title">{{ mypost.title }}</h2>
-                            <h3 class="post-subtitle">{{ mypost.body }}</h3>
+                            <h3 class="post-subtitle">{{ mypost.body.html|safe }}</h3>
                         </a>
 
                         <p class="post-meta">

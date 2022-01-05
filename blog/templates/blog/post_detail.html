@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post detail</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h2><a href="{% url 'posts' %}">Return to posts</a></h2>
+{% block hero_title %}{{ post.title }}{% endblock hero_title %}
+{% block hero_description %}{% endblock hero_description %}
 
-<h1>{{ post.title }}</h1>
+{% block content %}
 
-<p>{{ post.body }}</p>
+    <div class="container-fluid text-center">
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="">
+        {% endif %}
 
-</body>
-</html>
+        <p>{{ post.body.html|safe }}</p>
+    </div>
+
+{% endblock content %}
